@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Prototipo Web con DataTables</title>
+    <link rel="stylesheet" href="styles.css">
+    
+    <!-- Incluir el CSS de DataTables desde CDN -->
+    <link rel="stylesheet" href="https://cdn.datatables.net/1.11.5/css/jquery.dataTables.min.css">
+</head>
+<body>
+    <!-- Encabezado -->
+    <header>
+        <div class="logo">
+            <img src="logo.png" alt="Logo del sitio">
+        </div>
+        <nav>
+            <ul class="menu">
+                <li><a href="#inicio">Inicio</a></li>
+                <li><a href="#servicios">Servicios</a></li>
+                <li><a href="#contacto">Contacto</a></li>
+            </ul>
+            <div class="menu-icon">
+                <span>&#9776;</span> <!-- Ícono de menú hamburguesa -->
+            </div>
+        </nav>
+    </header>
+
+    <!-- Cuerpo principal -->
+    <main>
+        <section class="banner">
+            <img src="banner.jpg" alt="Imagen destacada">
+            <h1>Bienvenido a Nuestro Sitio</h1>
+        </section>
+
+        <section class="content">
+            <article>
+                <h2>Nuestros Servicios</h2>
+                <p>Ofrecemos una amplia gama de servicios que se ajustan a tus necesidades.</p>
+            </article>
+            <aside>
+                <h3>Noticias Recientes</h3>
+                <p>Actualizaciones y noticias del sector.</p>
+            </aside>
+        </section>
+
+        <!-- Nueva vista con DataTable -->
+        <section class="datatable-view">
+            <h2>Lista de Productos</h2>
+            <table id="productos" class="display">
+                <thead>
+                    <tr>
+                        <th>ID</th>
+                        <th>Producto</th>
+                        <th>Categoría</th>
+                        <th>Precio</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>1</td>
+                        <td>Producto A</td>
+                        <td>Categoría 1</td>
+                        <td>$100</td>
+                    </tr>
+                    <tr>
+                        <td>2</td>
+                        <td>Producto B</td>
+                        <td>Categoría 2</td>
+                        <td>$200</td>
+                    </tr>
+                    <tr>
+                        <td>3</td>
+                        <td>Producto C</td>
+                        <td>Categoría 1</td>
+                        <td>$150</td>
+                    </tr>
+                </tbody>
+            </table>
+        </section>
+    </main>
+
+    <!-- Pie de página -->
+    <footer>
+        <p>&copy; 2024 - Todos los derechos reservados.</p>
+        <div class="social">
+            <a href="#">Facebook</a>
+            <a href="#">Twitter</a>
+            <a href="#">Instagram</a>
+        </div>
+    </footer>
+
+    <!-- Incluir jQuery y DataTables desde CDN -->
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script src="https://cdn.datatables.net/1.11.5/js/jquery.dataTables.min.js"></script>
+
+    <!-- Incluir tu script.js -->
+    <script src="script.js"></script>
+
+    <script>
+        // Inicializar DataTables
+        $(document).ready(function() {
+            $('#productos').DataTable({
+                "language": {
+                    "search": "Buscar:",
+                    "lengthMenu": "Mostrar _MENU_ registros",
+                    "info": "Mostrando _START_ a _END_ de _TOTAL_ registros",
+                    "paginate": {
+                        "first": "Primero",
+                        "last": "Último",
+                        "next": "Siguiente",
+                        "previous": "Anterior"
+                    }
+                }
+            });
+        });
+    </script>
+</body>
+</html>
